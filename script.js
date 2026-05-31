@@ -25,5 +25,9 @@ function generateResult() {
     const randomResult =
         results[Math.floor(Math.random() * results.length)];
 
-    resultBox.textContent = randomResult;
+    const textBox = document.querySelector(".scroll-text");
+    textBox.textContent=randomResult;
+    resultBox.classList.remove("open");
+    void resultBox.offsetWidth;
+    resultBox.classList.add("open");
 }
