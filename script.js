@@ -21,7 +21,33 @@ function generateResult() {
         resultBox.textContent = "Enter some ingredients first!";
         return;
     }
+    const riskFill = document.getElementById("riskFill");
+    const riskText = document.getElementById("riskText");
 
+    const ingredientCount =
+    ingredientBox.value.split(",").length;
+    const risk=
+    Math.min(ingredientCount*20,100);
+    if(risk<25){
+        riskFill.style.width="25%";
+        riskFill.style.background="#3cb371";
+        riskText.textContent="🟢mildly suss"
+    }
+    else if(risk<50){
+        riskFill.style.width="50%";
+        riskFill.style.background="#D4AF37";
+        riskText.textContent="🟡cursed";
+    }
+    else if(risk<75){
+        riskFill.style.width="75%";
+        riskFill.style.background="#ff8c00";
+        riskText.textContent="🟠forbidden";
+    }
+    else{
+        riskFill.style.width="100%";
+        riskFill.style.background="#ff3333";
+        riskText.textContent="🔴 ELDRITCH THREAT";
+    }
     const randomResult =
         results[Math.floor(Math.random() * results.length)];
 
