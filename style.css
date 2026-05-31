@@ -1,6 +1,7 @@
 body{
     font-family:Arial, sans-serif;
     background:#0B1F14;
+    color:#F5F1E8;
     display:flex;
     justify-content: center;
     align-items:center;
@@ -9,6 +10,7 @@ body{
 }
 .container{
     background:#163322;
+    border:2px solid #4A7856;
     padding:30px;
     border-radius:20px;
     width:500px;
@@ -16,13 +18,15 @@ body{
     box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 h1{
-    color:#2E8B57;
+    color:#D4AF37;
 }
 textarea{
     width:100%;
     height:120px;
     padding:10px;
     border-radius:12px;
+    background:#0B1F14;
+    color:#F5F1E8;
     border:2px solid #4A7856;
     margin-top:10px;
 }
@@ -30,14 +34,25 @@ button{
     margin-top:15px;
     padding:12px 25px;
     border:none;
-    background:#3CB371;
-    color:white;
+    background:#2E8B57;
+    color:#F5F1E8;
     border-radius:1px;
     cursor:pointer;
     font-size: 16px;
+}
+button:hover{
+    background:#3CB371;
 }
 #result{
     margin-top:20px;
     font-size:20px;
     font-weight:bold;
+    color:#7CFC00;
+    text-shadow:0 0 10px #7CFC00;
 }
+.container{
+    background:#163322;
+    border:2px solid #D4AF37;
+    box-shadow:0 0 25px rgba(212,175,55,0.3);
+}
+
