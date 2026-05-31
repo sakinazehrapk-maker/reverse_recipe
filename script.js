@@ -31,3 +31,7 @@ function generateResult() {
     void resultBox.offsetWidth;
     resultBox.classList.add("open");
 }
+function enterGrimoire(){
+    document.getElementById("warningScreen").style.display="none";
+    document.getElementById("mainApp").style.display="block";
+}
