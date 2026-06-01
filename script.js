@@ -12,15 +12,55 @@ const results = [
     "congratulations! youve made haunted yogurt",
     "this dish was banned by a goat"
 ];
+const forbiddenResults = [
+    "THE ANCIENT SEAL HAS BEEN BROKEN",
+    "YOU HAVE SUMMONED THE ACCOUNTANT OF THE ABYSS",
+    "THE COUNCIL OF WIZARDS HAS BEEN NOTIFIED",
+    "REALITY IS NOW OPTIONAL",
+    "THE CAULDRON IS AFRAID OF YOU",
+    "YOU HAVE COOKED SOMETHING THAT SHOULD NOT EXIST"
+];
 
 function generateResult() {
     const ingredientBox = document.getElementById("ingredients");
+    const ingredients =
+    ingredientBox.value.toLowerCase();
+    const forbiddenCombo =
+    ingredients.includes("milk") &&
+    ingredients.includes("ketchup") &&
+    ingredients.includes("banana");
+    if(forbiddenCombo){
+
+    document.body.classList.add("forbidden-mode");
+
+    const forbiddenMessage =
+        forbiddenResults[
+            Math.floor(Math.random() * forbiddenResults.length)
+        ];
+
+    const textBox =
+        document.querySelector(".scroll-text");
+
+    textBox.textContent = forbiddenMessage;
+
+    resultBox.classList.remove("open");
+    void resultBox.offsetWidth;
+    resultBox.classList.add("open");
+    const loreChance = Math.random();
+    if(loreChance<0.15){
+        setTimeout(showLore,1000);
+    }
+
+
+    return;
+}
     const resultBox = document.getElementById("result");
 
     if (!ingredientBox.value.trim()) {
         resultBox.textContent = "Enter some ingredients first!";
         return;
     }
+    
     const riskFill = document.getElementById("riskFill");
     const riskText = document.getElementById("riskText");
 
@@ -60,4 +100,32 @@ function generateResult() {
 function enterGrimoire(){
     document.getElementById("warningScreen").style.display="none";
     document.getElementById("mainApp").style.display="block";
+}
+const lorePages =[
+    "PAGE:17 never mix moon ilk with dragon ketchup,the kingdom is still recovering",
+    "PAGE 42:wizard Gary attempted to season soup with pure magic.we do not speak of Gary",
+    "PAGE 88: the great banana incident lasted three winters",
+    "PAGE 103:if your ccauldron begins singing, evacuate immediately",
+    "PAGE 144: the council banned glowing mayonnaise after the incident",
+    "PAGE 207:a potion containing seven cheese opened a portal to accounting"
+]
+function showLore(){
+    const randomLore=
+    lorePages[
+        Math.floor(Math.random()*lorePages.length)
+    ];
+    document.getElementById("loreText").textCount=
+    randomLore;
+    document.getElementById("lorePopup").style.display=
+    "flex;"
+}
+function closeLore(){
+    document.getElementById("lorePopup").style.display=
+    "none";
+}
+
+function closeLore(){
+
+    document.getElementById("lorePopup").style.display =
+        "none";
 }

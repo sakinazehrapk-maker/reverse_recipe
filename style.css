@@ -326,3 +326,50 @@ button:hover{
     color:#F5F1E8;
     font-weight:bold;
 }
+.forbidden-mode{
+    animation: forbittenPulse2s infinite;
+}
+@keyframes forbidden-mode{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(40deg)
+    }
+    100%{
+        filteer:hue-rotate(0deg)
+    }
+}
+.secret-hint{
+    color:#4A7856;
+    font-size:12px;
+    font-style:italic;
+}
+.lore-popup{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+.lore-card{
+    width:420px;
+    background: #f5f1e8;
+    color:#2b1d0e;
+    padding:25px;
+    border-radius:12px;
+    border:4px solid #D4AF37;
+    box-shadow: 0 0 30pxrgba(212,175,55,.4);
+    text-align:center;
+}
+.lore-card h2{
+    margin-bottom:15px;
+}
+.lore-card button{
+    margin-top:20px;
+}
