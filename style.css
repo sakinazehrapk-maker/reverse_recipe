@@ -373,3 +373,22 @@ button:hover{
 .lore-card button{
     margin-top:20px;
 }
+.achievement-panel{
+    margin:20px 0;
+    padding:15px;
+    background:#0B1F14;
+    border:2px solid #D4AF37;
+    border-radius:12px;
+    text-align:left;
+}
+.achievement-panel h3{
+    color:#D4AF37;
+    margin-top:0;
+}
+.achivement-panel ul{
+    padding-left:20px;
+}
+.achivement-panel li{
+    color:#F5F1E8;
+    margin:6px 0;
+}

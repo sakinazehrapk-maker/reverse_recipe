@@ -1,5 +1,23 @@
 console.log("script loaded");
 
+let brewCount = 0;
+
+const achievements = new Set();
+function unlockAchievement(name){
+    if(achievements.has(name)){
+        return;
+    }
+    achievements.add(name);
+    const list =
+        document.getElementById("achievementList");
+    if(list.children[0]?.textContent === "None Yet..."){
+        list.innerHTML = "";
+    }
+    const item = document.createElement("li");
+    item.textContent = name;
+    list.appendChild(item);
+}
+
 const results = [
     "you accidentally created a medieval poison",
     "this mixture is wanted in 14 countries",
@@ -22,6 +40,7 @@ const forbiddenResults = [
 ];
 
 function generateResult() {
+    brewCount++;
     const ingredientBox = document.getElementById("ingredients");
     const ingredients =
     ingredientBox.value.toLowerCase();
@@ -47,7 +66,7 @@ function generateResult() {
     void resultBox.offsetWidth;
     resultBox.classList.add("open");
     const loreChance = Math.random();
-    if(loreChance<0.15){
+    if(loreChance<0.50){
         setTimeout(showLore,1000);
     }
 
