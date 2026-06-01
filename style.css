@@ -36,7 +36,7 @@ button{
     border:none;
     background:#2E8B57;
     color:#F5F1E8;
-    border-radius:1px;
+    border-radius:10px;
     cursor:pointer;
     font-size: 16px;
 }
@@ -86,7 +86,7 @@ button:hover{
     background:#7CFC00;
     border-radius: 50%;
     animation: bubbleUp 2s infinite ease-in-out;
-    opacity:0.8s;
+    opacity:0.8;
 }
 .bubbles span:nth-child(1) { left: 10%; animation-delay: 0s; }
 .bubbles span:nth-child(2) { left: 30%; animation-delay: 0.4s; }
@@ -121,7 +121,7 @@ button:hover{
 
 .fog2{
     animation-duration: 18s;
-    opacity: 0.6s;
+    opacity: 0.6;
 }
 @keyframes fogMove{
     0%{transform:translateX(0);}
@@ -199,9 +199,9 @@ button:hover{
     animation: glowScroll 1s ease;
 }
 @keyframes glowScroll{
-    0%{bow-shadow:0 0 0 rgba(212,175,55,0);}
-    50%{bow-shadow:0 0 30px rgba(212,175,55,0.8);}
-    100%{bow-shadow:0 0 20px rgba(212,175,55,.3);}
+    0%{box-shadow:0 0 0 rgba(212,175,55,0);}
+    50%{box-shadow:0 0 30px rgba(212,175,55,0.8);}
+    100%{box-shadow:0 0 20px rgba(212,175,55,.3);}
 }
 .runes{
     position:absolute;
@@ -229,15 +229,15 @@ button:hover{
 @keyframes floatRune{
     0%{
         transform: rotate(0deg)translateY(0px);
-        opacity:0.4s;
+        opacity:0.4;
     }
     50%{
         opacity:1;
         transform: rotate(189deg) translateY(-10px);
     }
     100%{
-        trannsform:rotate(360deg)translateY(0px);
-        opacity:0.4s;
+        transform:rotate(360deg)translateY(0px);
+        opacity:0.4;
     }
 }
 .scroll .runes{
@@ -277,7 +277,7 @@ button:hover{
 .warning-box p{
     color:#F5F1E8;
     font-size:14px;
-    line-height: 1,5;
+    line-height: 1.5;
     margin-bottom:20px;
 }
 
@@ -296,7 +296,7 @@ button:hover{
 @keyframes pulseWarning{
     0%{box-shadow:0 0 20px rgba(212,175,55,0.2);}
     50%{box-shadow:0 0 40px rgba(212,175,55,0.6);}
-    100%{bow-shadow: 0 0 20px rgba(212,175,55,0.2);}
+    100%{box-shadow: 0 0 20px rgba(212,175,55,0.2);}
 }
 .risk-container{
     margin-top:20px;

@@ -4,20 +4,23 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>reverse recipe generator</title>
+        <p class="secret-hint">
+    ancient texts mention three forbidden ingredients...</p>
         <link rel="stylesheet"href="style.css">
     </head>
     <body>
         <div id="warningScreen" class="warning-screen">
-            <div class="warning-box"></div>
-            <h1>FORBITTEN GRIMOIRE</h1>
+            <div class="warning-box">
+            <h1>FORBIDDEN GRIMOIRE</h1>
             <p>this cauldron contains unstable magical reactions.
                  some combinations may summon entities,distort reality or dissapoint a wizard</p>
                  <button onclick="enterGrimoire()">
                     i accept the consequences
                  </button>
-                 </div>
+                 
+             </div>
         </div>
-        <div id="mainApp" style="display:none;"></div>
+        <div id="mainApp" style="display:none;">
 
         <div class="container">
             <h1>reverse recipe generator</h1>
@@ -40,6 +43,7 @@
                     </div>
             </div>
             
+            
             <textarea
             id="ingredients"
             placeholder="milk,banana,ketchup..."></textarea>
@@ -51,7 +55,7 @@
             <div class="risk-bar">
                 <div id="riskFill"></div>
             </div>
-            <div id="risktext">unknown</div>
+            <div id="riskText">unknown</div>
             </div>
 
             <div id="result" class="scroll">
