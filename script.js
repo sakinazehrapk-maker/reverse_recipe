@@ -1,4 +1,12 @@
 console.log("script loaded");
+const SAVE_KEYS = {
+    achievements: "wizard_achievements",
+    brewCount: "wizard_brewCount"
+};
+let brewCount = parseInt(localStorage.getItem(SAVE_KEYS.brewCount)) || 0;
+let achievements = new Set(
+JSON.parse(localStorage.getItem(SAVE_KEYS.achievements))||[]
+);
 
 let brewCount = 0;
 const achievements = new Set();
@@ -15,7 +23,7 @@ function showAchievementPopup(name){
     `Achievement unlocked!<br>${name}`;
     popup.classList.add("show");
     setTimeout(()=>{
-        popup.classList.remove("show";)
+        popup.classList.remove("show");
     },3000)
 }
 
@@ -24,6 +32,7 @@ function unlockAchievement(name){
         return;
     }
     achievements.add(name);
+    showAchievementPopup(name);
     const list =
         document.getElementById("achievementList");
 
@@ -39,6 +48,7 @@ function unlockAchievement(name){
     item.textContent = name;
     list.appendChild(item);
     }
+    saveGame();
     checkArchmage();
 }
 function checkArchmage(){
@@ -97,6 +107,7 @@ function generateResult() {
     return;
 }
     brewCount++;
+    saveGame();
     if(brewCount===1){
         unlockAchievement("First Brew");
     }
@@ -198,3 +209,17 @@ function closeLore(){
     document.getElementById("lorePopup").style.display=
     "none";
 }
+window.onload = function () {
+    const list = document.getElementById("achievementList");
+    if (list) {
+        if (achievements.size > 0) {
+            list.innerHTML = "";
+            achievements.forEach(a => {
+                const item = document.createElement("li");
+                item.textContent = a;
+                list.appendChild(item);
+            });
+        }
+    }
+    console.log("game loaded from local storage");
+};
