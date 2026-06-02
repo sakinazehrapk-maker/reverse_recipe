@@ -4,14 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>reverse recipe generator</title>
-        <div class="achievement-panel">
-            <h3>achivementsss</h3>
-            <ul id="achivementList">
-                <li>none yet...</li>
-            </ul>
-            </div>
-        <p class="secret-hint">
-    ancient texts mention three forbidden ingredients...</p>
+        
         <link rel="stylesheet"href="style.css">
     </head>
     <body>
@@ -27,6 +20,14 @@
              </div>
         </div>
         <div id="mainApp" style="display:none;">
+            <div class="achievement-panel">
+            <h3>achivementsss</h3>
+            <ul id="achievementList">
+                <li>none yet...</li>
+            </ul>
+            </div>
+        <p class="secret-hint">
+    ancient texts mention three forbidden ingredients...</p>
 
         <div class="container">
             <h1>reverse recipe generator</h1>
@@ -76,16 +77,21 @@
                 <div class="scroll-text"></div>
             </div>
         </div>
+        </div>
         <div id="lorePopup" class="lore-popup">
             <div class="lore-card">
-                <h2> loast grimoire page found</h2>
-                <p id="lore-card"></p>
+                <h2> lost grimoire page found</h2>
+                <p id="loreText"></p>
                 <button onclick="closeLore()">
                     return to experimenting
                 </button>
             </div>
+            <div id="achievementPopup" class="achievement-popup">
+                <div id="achievementPopupText"></div>
+            </div>
 
 </div>
+
         <script src="script.js"></script>
     </body>
 </html>
