@@ -16,6 +16,8 @@ body{
     width:500px;
     text-align:center;
     box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    position:relative;
+    overflow:hidden;
 }
 h1{
     color:#D4AF37;
@@ -49,11 +51,6 @@ button:hover{
     font-weight:bold;
     color:#7CFC00;
     text-shadow:0 0 10px #7CFC00;
-}
-.container{
-    background:#163322;
-    border:2px solid #D4AF37;
-    box-shadow:0 0 25px rgba(212,175,55,0.3);
 }
 .cauldron{
     position: relative;
@@ -162,10 +159,6 @@ button:hover{
         opacity:0;
     }
 }
-.container {
-    position: relative;
-    overflow: hidden;
-}
 .cauldron, textarea, button {
     position: relative;
     z-index: 2;
@@ -194,10 +187,10 @@ button:hover{
     height:auto;
     transform:scaleY(1);
     padding:10px;
-}
-.scroll.open{
     animation: glowScroll 1s ease;
+
 }
+
 @keyframes glowScroll{
     0%{box-shadow:0 0 0 rgba(212,175,55,0);}
     50%{box-shadow:0 0 30px rgba(212,175,55,0.8);}
@@ -259,7 +252,7 @@ button:hover{
     align-items:center;
     z-index:9999;
 }
-.warning-box h1{
+.warning-box {
     background:#0B1F14;
     border:2px solid #D4AF37;
     padding:30px;
@@ -411,4 +404,19 @@ button:hover{
 #achievementPopupText{
     font-weight:bold;
     text-align:center;
+}
+@keyframes achievementtGlow {
+    0%{
+        box-shadow:0 0 10px rgba(212,175,55,0.3);
+    }
+    50%{
+        box-shadow:0 0 30px rgba(212,175,55,1);
+    }
+    100%{
+        box-shadow:0 0 10px rgba(212,175,55,0.3);
+    }
+}
+.achievement-popup.show{
+    right:30px;
+    animation: achievementGlow 1s infinite;
 }

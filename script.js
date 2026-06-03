@@ -7,9 +7,10 @@ let brewCount = parseInt(localStorage.getItem(SAVE_KEYS.brewCount)) || 0;
 let achievements = new Set(
 JSON.parse(localStorage.getItem(SAVE_KEYS.achievements))||[]
 );
-
-let brewCount = 0;
-const achievements = new Set();
+function saveGame(){
+    localStorage.setItem(SAVE_KEYS.brewCount, brewCount)
+    localStorage.setItem(SAVE_KEYS.achievements,JSON.stringify([...achievements]));
+}
 function showAchievementPopup(name){
     const popup =
     document.getElementById(
@@ -19,12 +20,9 @@ function showAchievementPopup(name){
     document.getElementById(
         "achievementPopupText"
     );
-    popupText.innerText=
-    `Achievement unlocked!<br>${name}`;
+     popupText.innerHTML = `Achievement unlocked!<br><strong>${name}</strong>`;
     popup.classList.add("show");
-    setTimeout(()=>{
-        popup.classList.remove("show");
-    },3000)
+    setTimeout(() => popup.classList.remove("show"), 3000);
 }
 
 function unlockAchievement(name){
@@ -36,17 +34,14 @@ function unlockAchievement(name){
     const list =
         document.getElementById("achievementList");
 
-    if (
-        list&&
-        list.textContent.trim()=== "none yet..."
-    ){
-        list.innerHTML="";
-    }
     
     if(list){
-    const item = document.createElement("li");
-    item.textContent = name;
-    list.appendChild(item);
+     if (list.children[0]?.textContent.trim() === "none yet...") {
+            list.innerHTML = "";
+        }
+        const item = document.createElement("li");
+        item.textContent = name;
+        list.appendChild(item);
     }
     saveGame();
     checkArchmage();
@@ -100,13 +95,15 @@ function generateResult() {
     const resultBox=document.getElementById("result");
     
     if (!ingredientBox.value.trim()) {
-        const TextBox=document.querySelector(".scroll-text");
-        if(textBox){
-        resultBox.textContent = "enter some ingredients first!";
-        }
+        const textBox = document.querySelector(".scroll-text");
+
+if (textBox) {
+    textBox.textContent = "enter some ingredients first!";
+}
     return;
 }
     brewCount++;
+    updateUI();
     saveGame();
     if(brewCount===1){
         unlockAchievement("First Brew");
@@ -125,9 +122,11 @@ function generateResult() {
     const riskText = document.getElementById("riskText");
 
     const ingredientCount =
-    ingredientBox.value.split("/[,\s]+/").length;
-    const risk=
-    Math.min(ingredientCount*20,100);
+    ingredientBox.value
+        .split(/[,\s]+/)
+        .filter(item => item.trim() !== "")
+        .length;
+    const risk = Math.min(ingredientCount * 20, 100);
     if(risk<25){
         riskFill.style.width="25%";
         riskFill.style.background="#3cb371";
@@ -223,3 +222,9 @@ window.onload = function () {
     }
     console.log("game loaded from local storage");
 };
+function updateUI(){
+    const display=document.getElementById("brewDisplay");
+    if(display){
+        display.textContent=brewCount;
+    }
+}
