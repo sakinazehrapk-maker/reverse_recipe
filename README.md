@@ -80,5 +80,5 @@ forbidden glow effects in chaos mode
 WARNING PAGE:
 <img width="1364" height="554" alt="image" src="https://github.com/user-attachments/assets/a49234f3-272c-4bba-8643-47c0d1aa41cc" />
 
-made for HORIZONS HackClub!!
+made for HackClub!!
 
