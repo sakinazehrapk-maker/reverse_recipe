@@ -67,7 +67,5 @@ smoke + fog layers
 animated parchment scroll result display
 forbidden glow effects in chaos mode
 
-made for HORIZONZ HackClub!!
-☠️ Reality Breaker
+made for HORIZONS HackClub!!
 
-May also trigger hidden lore pages 📜
